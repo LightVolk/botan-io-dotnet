@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
+
 using System.Threading.Tasks;
 
 namespace BotanIO.Api
@@ -19,8 +20,10 @@ namespace BotanIO.Api
         public Botan(string botanToken)
         {
             _botanToken = botanToken;
-            _client = new HttpClient();
-            _client.BaseAddress = new Uri("https://api.botan.io/");
+            _client = new HttpClient()
+            {
+                BaseAddress = new Uri("https://api.botan.io/")
+            };
         }
 
         /// <summary>
